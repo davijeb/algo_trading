@@ -3,6 +3,8 @@ package com.lab49.algotrader.movingaverage;
 import com.lab49.algotrader.TradingProperties;
 import com.lab49.algotrader.calcs.Calculator;
 import com.lab49.algotrader.models.price.Price;
+import com.lab49.algotrader.models.price.PriceReset;
+import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -10,6 +12,7 @@ import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 
 // a number of tests to ensure the calculators are able to
 // detect an upward moving average
@@ -95,4 +98,25 @@ public abstract class AbstractMovingAverageTest {
 
         calculator.calc(prices);
     }
+
+	@Test public void
+	shouldHaveCorrectPriceAfterCreation() {
+		assertThat(new Price("BP", 1).getProductName(), is("BP"));
+		assertThat(new Price("BP", 1).getPrice(), is(1d));
+	}
+
+	@Test public void
+	shouldReturnCorrectClonedPrice() throws CloneNotSupportedException {
+		assertThat((Price)new Price("BP", 1).clone(), is(new Price("BP", 1)));
+	}
+
+	@Test public void
+	shouldReturnFalseWhenResetCalledOnStandardPrice() {
+		assertThat(new Price("BP", 1).reset(), is(false));
+	}
+
+	@Test public void
+	shouldReturnTrueWhenResetCalledOnPriceReset() {
+		assertThat(new PriceReset().reset(), is(true));
+	}
 }

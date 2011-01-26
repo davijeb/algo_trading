@@ -7,10 +7,14 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * TODO: finish
- * @author Jeremy Davies [jerdavies@gmail.com]
- * @version 1.0
- * @updated 27-Jan-2013 12:03:21
+ * To allow for parallelism in trade generation we will
+ * create pricing windows based on the product name.
+ *
+ * This factory provides a map:
+ *
+ * product name -> pricing publisher
+ *
+ * author : Jeremy Davies [jerdavies@gmail.com]
  */
 public class PricingDimensionPublisherFactory {
 

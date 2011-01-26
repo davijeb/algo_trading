@@ -11,10 +11,9 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * The LinearRegressionCalculator determines if there is an upward trend in the
  * price data. Using the apache commons maths libs it is able to generate a
  * function of the form:  y = mx + c  To signify an upward trend we require m (the
- * slope) to be > 0
+ * slope) to be > 0.
+ *
  * @author Jeremy Davies [jerdavies@gmail.com]
- * @version 1.0
- * @updated 27-Jan-2013 12:03:20
  */
 @ThreadSafe
 public class LinearRegressionCalculator implements Calculator {

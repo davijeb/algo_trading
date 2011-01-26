@@ -1,7 +1,5 @@
 package com.lab49.algotrading.harness.simulation;
 
-import com.lab49.algotrader.algos.TradingAlgorithm;
-import com.lab49.algotrader.algos.TradingAlgorithmImpl;
 import com.lab49.algotrader.models.price.Price;
 import com.lab49.algotrader.models.price.PriceReset;
 import com.lab49.algotrading.harness.io.SerializableBlockingQueueWrapper;
@@ -21,7 +19,6 @@ public class TradingSimulator {
     private final Scanner sc;
     private final SerializableQueueWrapper<Price> wrapper;
     private final PriceGenerator generator;
-	private TradingAlgorithm ta;
 
     public TradingSimulator(BlockingQueue<Price> sharedQueue) throws InterruptedException, IOException, ClassNotFoundException {
 
@@ -31,16 +28,14 @@ public class TradingSimulator {
         this.generator = new PriceGenerator(wrapper, sharedQueue);
 
 		generateModelAnswer();
-		
-        //init();
-        //init();
-		
 
-        
+		init();
+
     }
 
     private void init() throws InterruptedException, IOException, ClassNotFoundException {
-        System.out.println("Add single price point: <PRODUCT_NAME> <PRICE>");
+
+		System.out.println("Add single price point: <PRODUCT_NAME> <PRICE>");
         System.out.println("Generate random prices: g <NUMBER_OF_PRICES>");
         System.out.println("Replay previous run: r <NUMBER_OF_PRICES>");
         System.err.println("Press * to exit");
@@ -75,6 +70,6 @@ public class TradingSimulator {
         sharedQueue.add(new Price("RDSA", 2209.00));
         sharedQueue.add(new Price("BP",   7.66));
         sharedQueue.add(new Price("BP",   7.64));
-        sharedQueue.add(new Price("BP",   7.67));       // should see this
+        sharedQueue.add(new Price("BP",   7.67));       // should see this being generated
     }
 }

@@ -9,11 +9,10 @@ import java.util.concurrent.Executor;
 
 /**
  * The PricingDimensionPublisher accepts prices and attempts to create a window of
- * a fixed size. When the size is established it publishes the prices to an
+ * a fixed size (the dimension). When the size is established it publishes the prices to an
  * executor using a PriceWindowConsumer.
  *
  * @author Jeremy Davies [jerdavies@gmail.com]
- * @version 1.0
  */
 public class PricingDimensionPublisher implements Cloneable {
 

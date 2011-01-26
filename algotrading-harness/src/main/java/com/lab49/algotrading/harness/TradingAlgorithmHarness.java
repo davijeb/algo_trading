@@ -29,13 +29,11 @@ public class TradingAlgorithmHarness {
      * the simplest.
      */
     private static final Executor EXECUTOR = Executors.newSingleThreadExecutor();
-	private TradingSimulator simulator;
 
     public static void main(String args[]) throws InterruptedException, IOException, ClassNotFoundException {
 
         final BlockingQueue<Price> sharedQueue = new LinkedBlockingQueue<Price>();
 
-        EXECUTOR.execute(new PriceProducer(sharedQueue));
         EXECUTOR.execute(new PriceConsumer(sharedQueue));
 
         // Add the generate to allow manual publishing / replay

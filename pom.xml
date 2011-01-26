@@ -14,7 +14,29 @@
         <module>algotrading-harness</module>
     </modules>
 
+    <inceptionYear>2013</inceptionYear>
+
+    <description>Implementation of the Trading Algorithm
+                 test for Lab49.
+                 "Core" contains primary business code.
+                 "Harness" contains an application harness.
+    </description>
+
+    <developers>
+        <developer>
+            <name>Jeremy Davies</name>
+            <email>jerdavies@gmail.com</email>
+        </developer>
+    </developers>
+
     <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math</artifactId>
+            <version>2.0</version>
+        </dependency>
+
+        <!-- Test libraries -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -22,14 +44,16 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.8.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <version>1.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-math</artifactId>
-            <version>2.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

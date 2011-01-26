@@ -1,2 +1,48 @@
-This file was created by IntelliJ IDEA 12.0.2 for binding GitHub repository
-This file was modified by IntelliJ IDEA 12.0.2 for binding GitHub repository
+Implementation for Lab49 TradingAlgorithm test.
+
+Two modules:
+
+- core
+- harness
+
+core (19 classes)
+----
+
+Primary business logic split amongst a handful of packages.
+
+-- com
+    -- lab49
+        -- algotrader
+            -- algos: The TradingAlgorithm implementation
+            -- calcs: Logic to decide if the price data has an upward trend
+            -- factory: Self explanatory
+            -- marshaller: Used to create Price window blocks of a fixed size
+                           and add them to a publisher
+            -- models: The Price/Trade models plus a few others
+            -- utils: Self explanatory
+        -- A publisher to add price windows to an execution queue
+        -- A properties helper
+
+In addition there is a ../resources/algo.properties file which contains
+runtime information such as product name and pricing window sizes.
+
+There is also a number of unit/mock tests in the usual place.
+
+harness
+-------
+
+Application harness to simulate the real-world
+
+-- com
+    -- lab49
+        -- algotrader
+            -- harness
+                -- io: Special queue wrappers used to persist serialized queue data
+                       to allow user to re-run the tests
+                -- simulation: A simulator which accepts System.in commands to run specific
+                               actions, plus a price point data generator
+            -- A consumer which reads from the shared price queue
+            -- The main(...) method class which runs the app
+
+
+

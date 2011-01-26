@@ -3,11 +3,10 @@ package com.lab49.algotrader;
 import java.util.Properties;
 
 /**
- * Properties file to be use for transient variables such as trading volume and
- * property type.
+ * Properties file to be use for info such as trading volume or
+ * price window size.
+ *
  * @author Jeremy Davies [jerdavies@gmail.com]
- * @version 1.0
- * @updated 27-Jan-2013 12:03:20
  */
 public final class TradingProperties extends Properties {
 
@@ -24,9 +23,8 @@ public final class TradingProperties extends Properties {
 		try {
 			load(TradingProperties.class.getResourceAsStream(PROP_FILE));
 		} catch (Exception e) {
-			System.out.println("Fatal: Unable to load " + PROP_FILE);
+			System.err.println("Fatal: Unable to load " + PROP_FILE);
 			System.exit(0); // no point continuing
-
 		}
 	}
 

@@ -12,9 +12,8 @@ import java.util.logging.Logger;
 /**
  * The PricingWindowMarshaller accepts price objects and assigns them to the
  * correct publishing mechanism based on the the product name.
+ *
  * @author Jeremy Davies [jerdavies@gmail.com]
- * @version 1.0
- * @updated 27-Jan-2013 12:03:21
  */
 public class PricingWindowMarshaller {
 
@@ -23,7 +22,6 @@ public class PricingWindowMarshaller {
            Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
     private final Map<String, PricingDimensionPublisher> publishers;
-	Map<String, PricingDimensionPublisher> pricingMap;
 
     public PricingWindowMarshaller() {
         publishers = PricingDimensionPublisherFactory.get();
@@ -43,7 +41,7 @@ public class PricingWindowMarshaller {
          * clearing all the PricingDimensionPublisher price list values.
          */
         if(price.reset()) {
-            for(PricingDimensionPublisher pdp: publishers.values()) pdp.getPrices().clear();
+			for(PricingDimensionPublisher pdp: publishers.values()) pdp.getPrices().clear();
             return;
         }
 

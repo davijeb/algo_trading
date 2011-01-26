@@ -4,8 +4,7 @@ import com.lab49.algotrader.TradingProperties;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.*;
 
 /**
  * author: Jeremy Davies [jerdavies@gmail.com]
@@ -19,7 +18,7 @@ public class PricingDimensionPublisherFactoryTest {
 
     @Test
     public void shouldHaveSizeEqualToPricingWindowSize() throws Exception {
-       // int expected = TradingProperties.INSTANCE.getInteger("pricing.window.size");
-        //assertThat(PricingDimensionPublisherFactory.get().size(), is(expected));
+       int expected = TradingProperties.INSTANCE.getStringArray("product.names").length;
+       assertThat(PricingDimensionPublisherFactory.get().size(), equalTo(expected));
     }
 }

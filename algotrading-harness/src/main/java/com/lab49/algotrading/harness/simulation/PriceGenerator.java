@@ -2,9 +2,11 @@ package com.lab49.algotrading.harness.simulation;
 
 import com.lab49.algotrader.TradingProperties;
 import com.lab49.algotrader.models.price.Price;
+import com.lab49.algotrader.models.price.PriceReset;
 import com.lab49.algotrading.harness.io.SerializableQueueWrapper;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.BlockingQueue;
 
 /**
@@ -30,11 +32,12 @@ public class PriceGenerator {
     public void generate(final int prices) throws InterruptedException, IOException {
 
         wrapper.clear();
-        //sharedQueue.removeAll(new ArrayList<Object>());
+        sharedQueue.removeAll(new ArrayList<Object>());
         sharedQueue.clear(); // tidy the queue before we start
+		sharedQueue.add(new PriceReset());
         for(int i=0; i <prices; i++) {
-            String product = products[((int)(Math.random() * 2))]; // get either BP or RDSA
-            Price p = new Price(product, (int)(Math.random() * 1000));		   // 0 < price < 1000
+            String product = products[((int)(Math.random() * 2))];      // get either BP or RDSA
+            Price p = new Price(product, (int)(Math.random() * 1000));  // 0 < price < 1000
 
             sharedQueue.add(p);
             wrapper.add(p);

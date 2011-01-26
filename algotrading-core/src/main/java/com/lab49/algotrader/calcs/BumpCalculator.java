@@ -12,9 +12,8 @@ import java.util.List;
  * trend  This class is thread safe as there is no shared access to mutable state
  * variables.  I made up the name BumpCalculator as it looks at the successive
  * bumps for each price point.
+ *
  * @author Jeremy Davies [jerdavies@gmail.com]
- * @version 1.0
- * @updated 27-Jan-2013 12:03:20
  */
 @ThreadSafe
 public class BumpCalculator implements Calculator {

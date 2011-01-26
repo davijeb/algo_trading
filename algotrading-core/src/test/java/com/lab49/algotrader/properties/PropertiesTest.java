@@ -11,7 +11,7 @@ public class PropertiesTest {
 
 	@Test public void
 	shouldReturnAValidNonZeroIntegerForPricingWindowSize() {
-		assertThat(TradingProperties.INSTANCE.getInteger("pricing.window.size"), is(any(Integer.class)));
+		assertThat(TradingProperties.INSTANCE.getInteger("pricing.window.size"), instanceOf(Integer.class));
 	}
 
 	@Test public void
@@ -20,7 +20,7 @@ public class PropertiesTest {
 	}
 
 	@Test public void
-	shouldReturnAValidIntegerForTradingQuentity() {
-		assertThat(TradingProperties.INSTANCE.getInteger("trading.quantity"), is(any(Integer.class)));
+	shouldReturnAValidIntegerForTradingQuantity() {
+		assertThat(TradingProperties.INSTANCE.getInteger("trading.quantity"), instanceOf(Integer.class));
 	}
 }

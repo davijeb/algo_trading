@@ -8,9 +8,8 @@ import com.lab49.algotrader.utils.enums.DirectionEnum;
 
 /**
  * Immutable Trade object used to define trading behaviour for a given Price.
+ *
  * @author Jeremy Davies [jerdavies@gmail.com]
- * @version 1.0
- * @updated 27-Jan-2013 12:03:22
  */
 @Immutable
 public class Trade {

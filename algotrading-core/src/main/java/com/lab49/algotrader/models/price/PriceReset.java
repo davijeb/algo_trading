@@ -3,9 +3,8 @@ package com.lab49.algotrader.models.price;
 /**
  * A standard price will not trigger a queue reset event. This one will. It
  * signifies a termination of all data up to this point in the queue.
+ *
  * @author Jeremy Davies [jerdavies@gmail.com]
- * @version 1.0
- * @updated 27-Jan-2013 12:03:22
  */
 public class PriceReset extends Price {
 

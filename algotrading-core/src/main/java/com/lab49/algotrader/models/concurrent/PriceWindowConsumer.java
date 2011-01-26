@@ -5,17 +5,20 @@ import com.lab49.algotrader.algos.TradingAlgorithmImpl;
 import com.lab49.algotrader.models.price.PriceWindow;
 
 /**
- * TODO: finish
+ * Runnable which executes trade generation based on a PriceWindow.
+ *
  * @author Jeremy Davies [jerdavies@gmail.com]
- * @version 1.0
- * @updated 27-Jan-2013 12:03:21
  */
 public class PriceWindowConsumer implements Runnable {
 
-    private PriceWindow window;
+    private final PriceWindow window;
     private static final TradingAlgorithm tradingAlgo = new TradingAlgorithmImpl();
 
-    public PriceWindowConsumer(PriceWindow window) {
+	/**
+	 * Constructor given a cloned price window.
+	 * @param window the pricing window
+	 */
+    public PriceWindowConsumer(final PriceWindow window) {
         this.window = window;
     }
 

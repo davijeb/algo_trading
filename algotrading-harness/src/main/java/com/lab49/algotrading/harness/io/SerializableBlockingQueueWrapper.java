@@ -14,11 +14,13 @@ import java.util.concurrent.BlockingQueue;
  * this class then serializes a copy of the queue, allowing the test to be re-run.
  *
  * @param <Price>
+ *
+ * author: Jeremy Davies [jerdavies@gmail.com]
  */
 public class SerializableBlockingQueueWrapper<Price> implements SerializableQueueWrapper<Price> {
 
     // The serialized filename
-    private static final String SERIALIZED_NAME = "pricedata.ser";
+    private final String SERIALIZED_NAME = "pricedata.ser";
 
     // The queue used as the price sink
     private final BlockingQueue<Price> sharedQueue;
