@@ -1,6 +1,6 @@
 package com.lab49.algotrader.calcs;
 
-import com.lab49.algotrader.models.Price;
+import com.lab49.algotrader.models.price.Price;
 
 import java.util.List;
 

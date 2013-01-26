@@ -1,7 +1,7 @@
 package com.lab49.algotrader.factory;
 
 import com.lab49.algotrader.TradingProperties;
-import com.lab49.algotrader.models.PricingDimensionProducer;
+import com.lab49.algotrader.PricingDimensionPublisher;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -11,18 +11,18 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author Jeremy Davies [jerdavies@gmail.com]
  */
-public class PricingDimensionFactory {
+public class PricingDimensionPublisherFactory {
 
-    private static Map<String, PricingDimensionProducer> map;
+    private static Map<String, PricingDimensionPublisher> map;
 
-    public static Map<String, PricingDimensionProducer> get() {
+    public static Map<String, PricingDimensionPublisher> get() {
 
         if(map != null) return map;
 
-        map = new ConcurrentHashMap<String, PricingDimensionProducer>();
+        map = new ConcurrentHashMap<String, PricingDimensionPublisher>();
 
         for(String product : TradingProperties.INSTANCE.getStringArray("product.names")) {
-             map.put(product, new PricingDimensionProducer());
+             map.put(product, new PricingDimensionPublisher());
         }
 
         return map;

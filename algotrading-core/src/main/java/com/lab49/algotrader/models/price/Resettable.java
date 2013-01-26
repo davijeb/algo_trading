@@ -1,7 +1,7 @@
-package com.lab49.algotrader.models;
+package com.lab49.algotrader.models.price;
 
 /**
- * TODO: finish
+ * Indicates that a price could be classed as a resettable instance
  *
  * @author Jeremy Davies [jerdavies@gmail.com]
  */

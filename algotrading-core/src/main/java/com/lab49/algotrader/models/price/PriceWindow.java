@@ -1,9 +1,9 @@
-package com.lab49.algotrader.models;
+package com.lab49.algotrader.models.price;
 
 import java.util.List;
 
 /**
- * TODO: finish
+ * Interface for the fixed size pricing window
  *
  * @author Jeremy Davies [jerdavies@gmail.com]
  */

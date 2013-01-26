@@ -1,6 +1,6 @@
-package com.lab49.algotrader.models;
+package com.lab49.algotrader.models.price;
 
-import com.lab49.algotrader.annotations.Immutable;
+import com.lab49.algotrader.utils.annotations.Immutable;
 
 import java.io.Serializable;
 
@@ -58,7 +58,7 @@ public class Price implements Serializable, Cloneable, Resettable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
 

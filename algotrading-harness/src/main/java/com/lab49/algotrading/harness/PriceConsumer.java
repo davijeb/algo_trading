@@ -1,7 +1,7 @@
 package com.lab49.algotrading.harness;
 
-import com.lab49.algotrader.models.Price;
-import com.lab49.algotrader.models.PricingWindowMarshaller;
+import com.lab49.algotrader.models.price.Price;
+import com.lab49.algotrader.marshaller.PricingWindowMarshaller;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.logging.Level;
@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class PriceConsumer implements Runnable {
 
-    PricingWindowMarshaller ONLY_ONE = new PricingWindowMarshaller();
+    private final PricingWindowMarshaller marshaller = new PricingWindowMarshaller();
 
     private final BlockingQueue<Price> sharedQueue;
 
@@ -24,10 +24,10 @@ public class PriceConsumer implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
 
             try {
-                ONLY_ONE.add(sharedQueue.take());
+                marshaller.add(sharedQueue.take());
             } catch (InterruptedException ex) {
                 Logger.getLogger(PriceConsumer.class.getName()).log(Level.SEVERE, null, ex);
             }

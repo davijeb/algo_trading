@@ -1,7 +1,7 @@
 package com.lab49.algotrader.calcs;
 
-import com.lab49.algotrader.annotations.ThreadSafe;
-import com.lab49.algotrader.models.Price;
+import com.lab49.algotrader.utils.annotations.ThreadSafe;
+import com.lab49.algotrader.models.price.Price;
 import org.apache.commons.math.stat.regression.SimpleRegression;
 
 import java.util.List;
@@ -41,19 +41,18 @@ public class LinearRegressionCalculator implements Calculator {
         // Need to obtain the mutex lock on the linear regression object
         // as the SimpleRegression class is probably not thread-safe. Lock-splitting
         // in this manner reduces actualized lock duration.
-       // synchronized (linearRegression) {
+        synchronized (linearRegression) {
 
             linearRegression.clear();
 
             for(int i=0; i < prices.size(); i++) {
                linearRegression.addData(i, prices.get(i).getPrice());
             }
-            // If we have a +'ve slope then we have an upward trend
+            // +'ve slope == upward trend
             if (linearRegression.getSlope() > 0) {
-                //System.out.println(":)");
                 return prices.get(prices.size()-1);
 			}
-       // }
+        }
 
         return null;
     }

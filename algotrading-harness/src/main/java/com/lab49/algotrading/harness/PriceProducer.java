@@ -1,6 +1,6 @@
 package com.lab49.algotrading.harness;
 
-import com.lab49.algotrader.models.Price;
+import com.lab49.algotrader.models.price.Price;
 
 import java.util.concurrent.BlockingQueue;
 

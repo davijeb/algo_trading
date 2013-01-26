@@ -1,6 +1,6 @@
 package com.lab49.algotrading.harness.io;
 
-import com.lab49.algotrader.models.PriceReset;
+import com.lab49.algotrader.models.price.PriceReset;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -54,11 +54,13 @@ public class SerializableBlockingQueueWrapper<Price> implements SerializableQueu
      * @throws IOException
      * @throws ClassNotFoundException
      */
+    @SuppressWarnings("unchecked")
     @Override
     public synchronized List<Price> read() throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(SERIALIZED_NAME);
         ObjectInputStream ois = new ObjectInputStream(fis);
-        List<Price> ted = (List<Price>) ois.readObject();
+        List<Price> ted;
+        ted = (List<Price>) ois.readObject();
         ois.close();
         return ted;
     }
@@ -88,6 +90,7 @@ public class SerializableBlockingQueueWrapper<Price> implements SerializableQueu
 
     @Override
     public void clear() {
+        queue.removeAll(new ArrayList<Object>());
         queue.clear();
     }
 }

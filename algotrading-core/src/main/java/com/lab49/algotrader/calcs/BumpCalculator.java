@@ -1,7 +1,7 @@
 package com.lab49.algotrader.calcs;
 
-import com.lab49.algotrader.annotations.ThreadSafe;
-import com.lab49.algotrader.models.Price;
+import com.lab49.algotrader.utils.annotations.ThreadSafe;
+import com.lab49.algotrader.models.price.Price;
 
 import java.util.List;
 
@@ -34,7 +34,7 @@ public class BumpCalculator implements Calculator {
 	 * @return the last price if an upward trend was detected
 	 */
     @Override
-    public Price calc(List<Price> prices) {
+    public Price calc(final List<Price> prices) {
 
         check(prices);
 

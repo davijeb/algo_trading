@@ -1,13 +1,8 @@
-package com.lab49.algotrader.models.concurrent_change;
+package com.lab49.algotrader.models.concurrent;
 
 import com.lab49.algotrader.algos.TradingAlgorithm;
 import com.lab49.algotrader.algos.TradingAlgorithmImpl;
-import com.lab49.algotrader.models.PriceWindow;
-import com.lab49.algotrader.models.PricingWindowMarshaller;
-
-import java.util.concurrent.BlockingQueue;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.lab49.algotrader.models.price.PriceWindow;
 
 /**
  * TODO: finish
@@ -17,11 +12,10 @@ import java.util.logging.Logger;
 public class PriceWindowConsumer implements Runnable {
 
     private PriceWindow window;
-    private final TradingAlgorithm tradingAlgo;
+    private static final TradingAlgorithm tradingAlgo = new TradingAlgorithmImpl();
 
     public PriceWindowConsumer(PriceWindow window) {
         this.window = window;
-        tradingAlgo = new TradingAlgorithmImpl();
     }
 
     @Override

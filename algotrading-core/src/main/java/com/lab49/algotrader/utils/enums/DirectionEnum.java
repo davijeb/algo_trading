@@ -1,4 +1,4 @@
-package com.lab49.algotrader.enums;
+package com.lab49.algotrader.utils.enums;
 
 /**
  * Enumeration to state the trading direction
@@ -7,5 +7,5 @@ package com.lab49.algotrader.enums;
  */
 public enum DirectionEnum {
 
-    BUY,SELL;
+    BUY,SELL
 }

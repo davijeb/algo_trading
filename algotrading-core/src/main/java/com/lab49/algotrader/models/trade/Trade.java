@@ -1,9 +1,10 @@
-package com.lab49.algotrader.models;
+package com.lab49.algotrader.models.trade;
 
 
 import com.lab49.algotrader.TradingProperties;
-import com.lab49.algotrader.annotations.Immutable;
-import com.lab49.algotrader.enums.DirectionEnum;
+import com.lab49.algotrader.models.price.Price;
+import com.lab49.algotrader.utils.annotations.Immutable;
+import com.lab49.algotrader.utils.enums.DirectionEnum;
 
 /**
  * Immutable Trade object used to define trading behaviour

@@ -1,7 +1,7 @@
 package com.lab49.algotrader.algos;
 
-import com.lab49.algotrader.models.Price;
-import com.lab49.algotrader.models.Trade;
+import com.lab49.algotrader.models.price.Price;
+import com.lab49.algotrader.models.trade.Trade;
 
 import java.util.List;
 
