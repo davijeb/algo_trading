@@ -5,10 +5,11 @@ import com.lab49.algotrader.PricingDimensionPublisher;
 import java.util.List;
 
 /**
- * The PricingWindow which accepts a publisher for the sole reason
- * of obtaining the pricing information
- *
+ * The PricingWindow which accepts a publisher for the sole reason of obtaining
+ * the pricing information
  * @author Jeremy Davies [jerdavies@gmail.com]
+ * @version 1.0
+ * @updated 27-Jan-2013 12:03:22
  */
 public class PricingWindow implements PriceWindow {
 

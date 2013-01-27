@@ -21,6 +21,7 @@ public class TradingSimulator {
     private final Scanner sc;
     private final SerializableQueueWrapper<Price> wrapper;
     private final PriceGenerator generator;
+	private TradingAlgorithm ta;
 
     public TradingSimulator(BlockingQueue<Price> sharedQueue) throws InterruptedException, IOException, ClassNotFoundException {
 
@@ -29,9 +30,13 @@ public class TradingSimulator {
         this.sc = new Scanner(System.in);
         this.generator = new PriceGenerator(wrapper, sharedQueue);
 
-        init();
+		generateModelAnswer();
+		
+        //init();
+        //init();
+		
 
-        generateModelAnswer();
+        
     }
 
     private void init() throws InterruptedException, IOException, ClassNotFoundException {

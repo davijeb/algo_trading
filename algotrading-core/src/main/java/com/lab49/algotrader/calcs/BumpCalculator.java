@@ -6,19 +6,15 @@ import com.lab49.algotrader.models.price.Price;
 import java.util.List;
 
 /**
- * The BumpCalculator looks at both the scale and direction of a point
- * p(1) and compares it to a point p(0). For all point we end up with
- * the magnitude of UP vs DOWN movements.
- *
- * IFF UP movements > DOWN movements then we have an upward trend
- *
- * This class is thread safe as there is no shared access to mutable
- * state variables.
- *
- * I made up the name BumpCalculator as it looks at the successive bumps
- * for each price point
- *
+ * The BumpCalculator looks at both the scale and direction of a point p(1) and
+ * compares it to a point p(0). For all point we end up with the magnitude of UP
+ * vs DOWN movements.  IFF UP movements > DOWN movements then we have an upward
+ * trend  This class is thread safe as there is no shared access to mutable state
+ * variables.  I made up the name BumpCalculator as it looks at the successive
+ * bumps for each price point.
  * @author Jeremy Davies [jerdavies@gmail.com]
+ * @version 1.0
+ * @updated 27-Jan-2013 12:03:20
  */
 @ThreadSafe
 public class BumpCalculator implements Calculator {

@@ -8,11 +8,12 @@ import java.util.*;
 import java.util.concurrent.Executor;
 
 /**
- * The PricingDimensionPublisher accepts prices and attempts to create
- * a queue of a certain size. When the size is established it publishes
- * the prices to an executor using a PriceWindowConsumer.
- *
+ * The PricingDimensionPublisher accepts prices and attempts to create a queue of
+ * a certain size. When the size is established it publishes the prices to an
+ * executor using a PriceWindowConsumer.
  * @author Jeremy Davies [jerdavies@gmail.com]
+ * @version 1.0
+ * @updated 27-Jan-2013 12:03:20
  */
 public class PricingDimensionPublisher implements Cloneable {
 

@@ -5,13 +5,13 @@ import com.lab49.algotrader.utils.annotations.Immutable;
 import java.io.Serializable;
 
 /**
- * Immutable price data used to store
- * product and price information.
- *
+ * Immutable price data used to store product and price information.
  * @author Jeremy Davies [jerdavies@gmail.com]
+ * @version 1.0
+ * @updated 27-Jan-2013 12:03:21
  */
 @Immutable
-public class Price implements Serializable, Cloneable, Resettable {
+public class Price implements Resettable, Serializable, Cloneable {
 
     private String productName;
     private final double price;

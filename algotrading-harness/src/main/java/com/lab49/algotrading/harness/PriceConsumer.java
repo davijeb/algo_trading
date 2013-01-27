@@ -9,14 +9,16 @@ import java.util.logging.Logger;
 
 /**
  * TODO: finish
- *
  * @author Jeremy Davies [jerdavies@gmail.com]
+ * @version 1.0
+ * @updated 27-Jan-2013 12:03:23
  */
 public class PriceConsumer implements Runnable {
 
     private final PricingWindowMarshaller marshaller = new PricingWindowMarshaller();
 
     private final BlockingQueue<Price> sharedQueue;
+	PricingWindowMarshaller ONLY_ONE;
 
     public PriceConsumer(BlockingQueue<Price> sharedQueue) {
         this.sharedQueue = sharedQueue;

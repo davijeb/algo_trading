@@ -6,8 +6,9 @@ import com.lab49.algotrader.models.price.PriceWindow;
 
 /**
  * TODO: finish
- *
  * @author Jeremy Davies [jerdavies@gmail.com]
+ * @version 1.0
+ * @updated 27-Jan-2013 12:03:21
  */
 public class PriceWindowConsumer implements Runnable {
 

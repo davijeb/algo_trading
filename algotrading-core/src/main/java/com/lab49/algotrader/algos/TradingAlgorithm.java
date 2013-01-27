@@ -7,8 +7,9 @@ import java.util.List;
 
 /**
  * The core TradingAlgorithm interface
- *
  * @author Jeremy Davies [jerdavies@gmail.com]
+ * @version 1.0
+ * @updated 27-Jan-2013 12:03:20
  */
 public interface TradingAlgorithm {
 

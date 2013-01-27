@@ -5,18 +5,16 @@ import com.lab49.algotrader.models.price.Price;
 import org.apache.commons.math.stat.regression.SimpleRegression;
 
 import java.util.List;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * The LinearRegressionCalculator uses a more complex method to
- * determine if there is an upward trend in the price data. Using
- * the apache commons maths libs it is able to generate a function
- * of the form:
- *
- * 	y = mx + c
- *
- * 	To signify an upward trend we require m (the slope) to be > 0
- *
- * 	@author Jeremy Davies [jerdavies@gmail.com]
+ * The LinearRegressionCalculator determines if there is an upward trend in the
+ * price data. Using the apache commons maths libs it is able to generate a
+ * function of the form:  y = mx + c  To signify an upward trend we require m (the
+ * slope) to be > 0
+ * @author Jeremy Davies [jerdavies@gmail.com]
+ * @version 1.0
+ * @updated 27-Jan-2013 12:03:20
  */
 @ThreadSafe
 public class LinearRegressionCalculator implements Calculator {
@@ -25,6 +23,9 @@ public class LinearRegressionCalculator implements Calculator {
     * Uses apache maths linear regression to calculate slope (analogous to trend)
     */
     private final SimpleRegression linearRegression = new SimpleRegression();
+
+    // TODO: Use this lock instead of the mutex
+    private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
 	/**
 	 * Calculate the slope of the price points and checks it is > 0 (which

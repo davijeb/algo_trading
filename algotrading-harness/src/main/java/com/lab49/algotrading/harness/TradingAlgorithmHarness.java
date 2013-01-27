@@ -10,16 +10,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * Start of the application.
- *
- * Standard Producer/Consumer pattern. Initially the application generates the model answer
- * given in the test sheet.
- *
- * It also includes a generate which can be used to generate data sets of a size defined by
- * the user. In addition it allows the user to re-run any previous test which is important in
- * testing any edge cases in a multi-threaded application.
- *
+ * Start of the application.  Standard Producer/Consumer pattern. Initially the
+ * application generates the model answer given in the test sheet.  It also
+ * includes a generate which can be used to generate data sets of a size defined
+ * by the user. In addition it allows the user to re-run any previous test which
+ * is important in testing any edge cases in a multi-threaded application.
  * @author Jeremy Davies [jerdavies@gmail.com]
+ * @version 1.0
+ * @updated 27-Jan-2013 12:03:24
  */
 public class TradingAlgorithmHarness {
 
@@ -31,6 +29,7 @@ public class TradingAlgorithmHarness {
      * the simplest.
      */
     private static final Executor EXECUTOR = Executors.newSingleThreadExecutor();
+	private TradingSimulator simulator;
 
     public static void main(String args[]) throws InterruptedException, IOException, ClassNotFoundException {
 

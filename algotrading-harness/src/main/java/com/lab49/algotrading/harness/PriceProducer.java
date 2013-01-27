@@ -6,8 +6,9 @@ import java.util.concurrent.BlockingQueue;
 
 /**
  * TODO: finish
- *
  * @author Jeremy Davies [jerdavies@gmail.com]
+ * @version 1.0
+ * @updated 27-Jan-2013 12:03:23
  */
 class PriceProducer implements Runnable {
 
